@@ -5,7 +5,7 @@ export default function Header() {
 	return (
 		<nav className="fixed top-4 left-1/2 -translate-x-1/2 px-6 py-1.5 mx-auto w-full max-w-7xl flex justify-between items-center z-50">
 			<Link href="/" className="">
-				<Image className="size-9" src="/images/icons/logo.svg" width={100} height={100} alt="Logo" priority/>
+				<Image className="size-9" src="/images/logo.svg" width={100} height={100} alt="Logo" priority/>
 			</Link>
 			<div className="bg-neutral-800 fixed  left-1/2 transform -translate-x-1/2 p-1 border-1 border-gray-600 rounded-full shadow-lg">
 				<ul className="flex gap-2">
@@ -28,6 +28,9 @@ export default function Header() {
 						<div></div>
 					</li>
 				</ul>
+			</div>
+			<div className="pointer-events-none fixed top-0 left-10 z-40 w-full h-24">
+				<div className="pointer-events-none absolute inset-0 z-10 opacity-100 bg-linear-to-b "></div>
 			</div>
 		</nav>
 	);
