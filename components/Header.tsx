@@ -3,11 +3,16 @@ import Image from "next/image";
 
 export default function Header() {
 	return (
+		<div>
+			<div className="pointer-events-none fixed top-0 left-0 z-30 w-full h-24">
+				<div className="pointer-events-none absolute inset-0 opacity-100 backdrop-blur-xs mask-linear-[black,black,black,transparent_100%]"></div>
+				<div className="pointer-events-none absolute inset-0 opacity-100 backdrop-blur-sm mask-linear-[black,transparent_80%,transparent_100%]"></div>
+			</div>
 		<nav className="fixed top-4 left-1/2 -translate-x-1/2 px-6 py-1.5 mx-auto w-full max-w-7xl flex justify-between items-center z-50">
-			<Link href="/" className="">
+			<Link href="/" className="z-40">
 				<Image className="size-9" src="/images/logo.svg" width={100} height={100} alt="Logo" priority/>
 			</Link>
-			<div className="bg-neutral-800 fixed  left-1/2 transform -translate-x-1/2 p-1 border-1 border-gray-600 rounded-full shadow-lg">
+			<div className="bg-neutral-800 fixed left-1/2 transform -translate-x-1/2 p-1 z-40 border-1 border-gray-600 rounded-full shadow-lg">
 				<ul className="flex gap-2">
 					<li className="relative">
 						<Link className="inline-block px-4 py-1" href="/">Home</Link>
@@ -29,9 +34,7 @@ export default function Header() {
 					</li>
 				</ul>
 			</div>
-			<div className="pointer-events-none fixed top-0 left-10 z-40 w-full h-24">
-				<div className="pointer-events-none absolute inset-0 z-10 opacity-100 bg-linear-to-b "></div>
-			</div>
 		</nav>
+		</div>
 	);
 }
