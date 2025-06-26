@@ -46,11 +46,11 @@ body {
 		inset: -200%;
 		background: conic-gradient(
 			from 0deg,
-			rgba(244,114,182,0.4),
-			rgba(192,132,252,0.4),
-			rgba(107,84,255,0.4),
-			rgba(130,177,255,0.4),
-			rgba(244,114,182,0.4)
+			rgba(244, 114, 182, 0.4),
+			rgba(192, 132, 252, 0.4),
+			rgba(107, 84, 255, 0.4),
+			rgba(130, 177, 255, 0.4),
+			rgba(244, 114, 182, 0.4)
 		);
 		animation: border-spin 7s linear infinite paused;
 		opacity: 0;

@@ -3,8 +3,51 @@
 import Image from "next/image";
 import { motion } from "motion/react"
 import TechIcon from "@/components/TechIcon";
+import {
+	Aperture, Brain,
+	Camera,
+	CodeXml,
+	Cpu, Film,
+	GitBranch,
+	Layout,
+	Paintbrush,
+	Server,
+	TabletSmartphone,
+	Video
+} from "lucide-react";
+import React, {JSX, ReactNode} from "react";
+
+type TechStackProps = {
+	name: string,
+	icon: string,
+	color?: string
+}
+
+type OtherStackProps = {
+	name: string,
+	icon: JSX.Element
+}
 
 export default function Home() {
+
+	const TechStack: React.FC<TechStackProps> = ({ name, icon, color }) => {
+		return (
+			<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800">
+				<TechIcon name={icon} color={color ?? undefined}/>
+				{name}
+			</span>
+		)
+	}
+
+	const OtherStack: React.FC<OtherStackProps> = ({ name, icon }) => {
+		return (
+			<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800">
+				{icon}
+				{name}
+			</span>
+		)
+	}
+
 	return (
 		<main className="relative flex flex-col items-center justify-center overflow-hidden">
 			<section id="hero" className="relative min-h-screen w-full mb-10">
@@ -50,9 +93,9 @@ export default function Home() {
 					<div className="absolute top-0 left-0 -right-50 -bottom-100 bg-radial from-blue-600 via-0% to-transparent to-60% -z-10 opacity-[5%]"></div>
 				</div>
 			</section>
-			<div className="w-full max-w-7xl mx-auto h-screen">
+			<div>
 				<section id="projects">
-					<div className="grid grid-cols-2 gap-4 w-full max-w-5xl mx-auto">
+					<div className="grid grid-cols-2 gap-4 w-full max-w-5xl mx-auto my-10">
 						<div className="flex flex-col gap-4">
 							<div className="card-wrapper">
 								<div className="card-content grid gap-1 p-5">
@@ -68,10 +111,10 @@ export default function Home() {
 										alt="CodeCore"
 									></Image>
 									<div className="flex flex-wrap gap-1.5">
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="react"/>React Native</span>
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="expo" color="white" />Expo</span>
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="typescript" />TypeScript</span>
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="appstore" />App Store</span>
+										<TechStack name="React Native" icon="react"/>
+										<TechStack name="Expo" icon="expo" color="white"/>
+										<TechStack name="TypeScript" icon="typescript"/>
+										<TechStack name="App Store" icon="appstore"/>
 									</div>
 								</div>
 							</div>
@@ -89,11 +132,11 @@ export default function Home() {
 										alt="Personal Portfolio"
 									></Image>*/}
 									<div className="flex flex-wrap gap-1.5">
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="nextdotjs" color="white" />Next.js</span>
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="react" />React</span>
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="vercel" color="white" />Vercel</span>
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="motion" />Motion.dev</span>
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="typescript" />TypeScript</span>
+										<TechStack name="Next.js" icon="nextdotjs" color="white"/>
+										<TechStack name="React" icon="react"/>
+										<TechStack name="Vercel" icon="vercel" color="white"/>
+										<TechStack name="Motion.dev" icon="motion"/>
+										<TechStack name="TypeScript" icon="typescript"/>
 									</div>
 								</div>
 							</div>
@@ -113,8 +156,8 @@ export default function Home() {
 										alt="CodeGrab"
 									></Image>
 									<div className="flex flex-wrap gap-1.5">
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="typescript" />TypeScript</span>
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="chromewebstore" />Chrome Web Store</span>
+										<TechStack name="TypeScript" icon="typescript" />
+										<TechStack name="Chrome Web Store" icon="chromewebstore" />
 									</div>
 								</div>
 							</div>
@@ -132,12 +175,94 @@ export default function Home() {
 										alt="BySaether"
 									></Image>
 									<div className="flex flex-wrap gap-1.5">
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="nextdotjs" color="white" />Next.js</span>
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="react" />React</span>
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="Vercel" color="white" />Vercel</span>
-										<span className="inline-flex gap-2 items-center justify-center h-min text-sm px-2 py-1 rounded-lg bg-neutral-900 border-1 border-neutral-800"><TechIcon name="typescript" />TypeScript</span>
+										<TechStack name="Next.js" icon="nextdotjs" color="white"/>
+										<TechStack name="React" icon="react"/>
+										<TechStack name="Vercel" icon="vercel" color="white"/>
+										<TechStack name="TypeScript" icon="typescript"/>
 									</div>
 								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="skills">
+					<div className="grid grid-cols-3 gap-4 w-full max-w-6xl mx-auto my-20">
+						<div className="flex flex-col gap-4 p-4 bg-neutral-900 rounded-2xl">
+							<div className="flex gap-4 text-2xl items-center">
+								<span className="p-3 rounded-xl bg-neutral-900 border-1 border-neutral-800">
+									<CodeXml size={24} color="currentColor" />
+								</span>
+								Frontend Development
+							</div>
+							<div className="flex flex-wrap gap-1.5">
+								<TechStack name="Next.js" icon="nextdotjs" color="white" />
+								<TechStack name="Vue.js" icon="vuedotjs" />
+								<TechStack name="React" icon="react" />
+								<TechStack name="React Native" icon="react" />
+								<TechStack name="Motion.dev" icon="motion" />
+								<TechStack name="TypeScript" icon="typescript" />
+								<TechStack name="Tailwind CSS" icon="tailwindcss" />
+							</div>
+						</div>
+						<div className="flex flex-col gap-4 p-4 bg-neutral-900 rounded-2xl">
+							<div className="flex gap-4 text-2xl items-center">
+								<span className="p-3 rounded-xl bg-neutral-900 border-1 border-neutral-800">
+									<Server size={24} color="currentColor" />
+								</span>
+								Backend Development
+							</div>
+							<div className="flex flex-wrap gap-1.5">
+								<TechStack name="Node.js" icon="nodedotjs" />
+								<TechStack name="Java" icon="java" />
+								<TechStack name="Python" icon="python" />
+							</div>
+						</div>
+						<div className="flex flex-col gap-4 p-4 bg-neutral-900 rounded-2xl">
+							<div className="flex gap-4 text-2xl items-center">
+								<span className="p-3 rounded-xl bg-neutral-900 border-1 border-neutral-800">
+									<Layout size={24} color="currentColor" />
+								</span>
+								UI/UX Design
+							</div>
+							<div className="flex flex-wrap gap-1.5">
+								<TechStack name="Figma" icon="figma" />
+							</div>
+						</div>
+						<div className="flex flex-col gap-4 p-4 bg-neutral-900 rounded-2xl">
+							<div className="flex gap-4 text-2xl items-center">
+								<span className="p-3 rounded-xl bg-neutral-900 border-1 border-neutral-800">
+									<Cpu size={24} color="currentColor" />
+								</span>
+								Tools & Technologies
+							</div>
+							<div className="flex flex-wrap gap-1.5">
+								<TechStack name="Vercel" icon="vercel" color="white" />
+								<TechStack name="Namecheap" icon="namecheap"/>
+							</div>
+						</div>
+						<div className="flex flex-col gap-4 p-4 bg-neutral-900 rounded-2xl">
+							<div className="flex gap-4 text-2xl items-center">
+								<span className="p-3 rounded-xl bg-neutral-900 border-1 border-neutral-800">
+									<GitBranch size={24} color="currentColor" />
+								</span>
+								Other
+							</div>
+							<div className="flex flex-wrap gap-1.5">
+								<OtherStack name="Artificial Intelligence" icon={<Brain size={16} color="#9bf332" />} />
+							</div>
+						</div>
+						<div className="flex flex-col gap-4 p-4 bg-neutral-900 rounded-2xl">
+							<div className="flex gap-4 text-2xl items-center">
+								<span className="p-3 rounded-xl bg-neutral-900 border-1 border-neutral-800">
+									<Paintbrush size={24} color="currentColor" />
+								</span>
+								Creative Skills
+							</div>
+							<div className="flex flex-wrap gap-1.5">
+								<TechStack name="Adobe Products" icon="adobe" />
+								<OtherStack name="Videography" icon={<Video size={16} color="currentColor" />} />
+								<OtherStack name="Photography" icon={<Aperture size={16} color="currentColor" />} />
+								<OtherStack name="Video Editing" icon={<Film size={16} color="currentColor" />} />
 							</div>
 						</div>
 					</div>
