@@ -97,7 +97,8 @@ export default function Home() {
 				<section id="projects">
 					<div className="grid grid-cols-2 gap-4 w-full max-w-5xl mx-auto my-10">
 						<div className="flex flex-col gap-4">
-							<div className="card-wrapper">
+							<motion.div whileHover={{ scale: 1.005 }} className="card-wrapper">
+								<div className="card-border"/>
 								<div className="card-content grid gap-1 p-5">
 									<h3 className="text-3xl font-bold">CodeCore</h3>
 									<a className="text-sm text-neutral-400 hover:underline w-min" href="https://codecore.bysaether.com" target="_blank">codecore.bysaether.com</a>
@@ -117,8 +118,9 @@ export default function Home() {
 										<TechStack name="App Store" icon="appstore"/>
 									</div>
 								</div>
-							</div>
-							<div className="card-wrapper">
+							</motion.div>
+							<motion.div whileHover={{ scale: 1.005 }}  className="card-wrapper">
+								<div className="card-border"/>
 								<div className="card-content grid gap-1 p-5">
 									<h3 className="text-3xl font-bold">Personal Portfolio</h3>
 									<a className="text-sm text-neutral-400 hover:underline w-min" href="https://william.bysaether.com" target="_blank">william.bysaether.com</a>
@@ -139,10 +141,11 @@ export default function Home() {
 										<TechStack name="TypeScript" icon="typescript"/>
 									</div>
 								</div>
-							</div>
+							</motion.div>
 						</div>
 						<div className="flex flex-col gap-4">
-							<div className="card-wrapper">
+							<motion.div whileHover={{ scale: 1.005 }}  className="card-wrapper">
+								<div className="card-border"/>
 								<div className="card-content grid gap-1 grid-cols-[auto_auto] grid-rows-[auto_auto_1fr_auto] p-5">
 									<h3 className="text-3xl font-bold">CodeGrab</h3>
 									<a className="text-sm text-neutral-400 hover:underline w-min" href="https://codegrab.bysaether.com" target="_blank">codegrab.bysaether.com</a>
@@ -160,8 +163,9 @@ export default function Home() {
 										<TechStack name="Chrome Web Store" icon="chromewebstore" />
 									</div>
 								</div>
-							</div>
-							<div className="card-wrapper">
+							</motion.div>
+							<motion.div whileHover={{ scale: 1.005 }}  className="card-wrapper">
+								<div className="card-border"/>
 								<div className="card-content grid gap-1 p-5">
 									<h3 className="text-3xl font-bold">BySaether.com</h3>
 									<a className="text-sm text-neutral-400 hover:underline w-min" href="https://bysaether.com" target="_blank">bysaether.com</a>
@@ -181,7 +185,7 @@ export default function Home() {
 										<TechStack name="TypeScript" icon="typescript"/>
 									</div>
 								</div>
-							</div>
+							</motion.div>
 						</div>
 					</div>
 				</section>
