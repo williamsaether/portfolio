@@ -4,18 +4,18 @@ import Image from "next/image";
 import { motion } from "motion/react"
 import TechIcon from "@/components/TechIcon";
 import {
-	Aperture, Brain,
-	Camera,
+	Aperture,
+	Brain,
 	CodeXml,
 	Cpu, Film,
 	GitBranch,
 	Layout,
 	Paintbrush,
 	Server,
-	TabletSmartphone,
 	Video
 } from "lucide-react";
-import React, {JSX, ReactNode} from "react";
+import React, { JSX } from "react";
+import Experience from "@/components/Experience";
 
 type TechStackProps = {
 	name: string,
@@ -49,8 +49,8 @@ export default function Home() {
 	}
 
 	return (
-		<main className="relative flex flex-col items-center justify-center overflow-hidden">
-			<section id="hero" className="relative min-h-screen w-full mb-10">
+		<main className="relative flex flex-col items-center justify-center">
+			<section id="hero" className="relative min-h-screen w-full mb-10 overflow-hidden">
 				<div className="grid grid-cols-2 gap-x-4 w-full max-w-6xl mx-auto mt-30 relative">
 					<div className="flex flex-col justify-center items-start">
 						<h1 className="font-bold text-left">
@@ -269,6 +269,11 @@ export default function Home() {
 								<OtherStack name="Video Editing" icon={<Film size={16} color="currentColor" />} />
 							</div>
 						</div>
+					</div>
+				</section>
+				<section id="experience">
+					<div className="w-full max-w-7xl mb-20">
+						<Experience/>
 					</div>
 				</section>
 			</div>
