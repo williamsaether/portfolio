@@ -11,7 +11,7 @@ type ProjectCardProps = {
 
 export function ScrollCard({ id, title, onInView }: ProjectCardProps) {
 	const ref = useRef<HTMLDivElement | null>(null);
-	const isInView = useInView(ref, { once: false, margin: "-100px 0px"});
+	const isInView = useInView(ref, { once: false, margin: "-70px 0px"});
 
 	const [hasTriggered, setHasTriggered] = useState(false);
 
@@ -31,7 +31,7 @@ export function ScrollCard({ id, title, onInView }: ProjectCardProps) {
 			className="h-[600px] bg-neutral-700 rounded-xl flex items-center justify-center text-white text-xl font-bold cursor-pointer"
 			initial={{ scale: 0.8, opacity: 0 }}
 			animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
-			transition={{ duration: 0.3, ease: "easeOut" }}
+			transition={{ duration: 0.4, ease: "easeInOut" }}
 		>
 			{title}
 		</motion.div>

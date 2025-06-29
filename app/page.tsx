@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import { motion } from "motion/react"
+import {motion, useScroll, useTransform} from "motion/react"
 import TechIcon from "@/components/TechIcon";
 import {
 	Aperture,
@@ -14,8 +14,9 @@ import {
 	Server,
 	Video
 } from "lucide-react";
-import React, { JSX } from "react";
+import React, {JSX, useRef} from "react";
 import Experience from "@/components/Experience";
+import Education from "@/components/Education";
 
 type TechStackProps = {
 	name: string,
@@ -273,8 +274,11 @@ export default function Home() {
 				</section>
 				<section id="experience">
 					<div className="w-full max-w-7xl mb-20">
-						<Experience/>
+						<Experience />
 					</div>
+				</section>
+				<section id="education">
+					<Education />
 				</section>
 			</div>
 		</main>
