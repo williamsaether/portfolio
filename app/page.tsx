@@ -14,7 +14,7 @@ import {
 	Server,
 	Video
 } from "lucide-react";
-import React, {JSX, useRef} from "react";
+import React, {JSX} from "react";
 import Experience from "@/components/Experience";
 import Education from "@/components/Education";
 
@@ -88,8 +88,7 @@ export default function Home() {
 						width={1000}
 						height={1234}
 						quality={100}
-						alt="Picture of William Sæther"
-					></Image>
+						alt="Picture of William Sæther" />
 					<div className="h-[2px] col-start-1 col-end-4 bg-linear-to-r from-transparent from-0% via-blue-400 via-80% to-transparent to-100%"></div>
 					<div className="absolute top-0 left-0 -right-50 -bottom-100 bg-radial from-blue-600 via-0% to-transparent to-60% -z-10 opacity-[5%]"></div>
 				</div>
@@ -110,8 +109,7 @@ export default function Home() {
 										width={500}
 										height={667}
 										quality={100}
-										alt="CodeCore"
-									></Image>
+										alt="CodeCore" />
 									<div className="flex flex-wrap gap-1.5">
 										<TechStack name="React Native" icon="react"/>
 										<TechStack name="Expo" icon="expo" color="white"/>
@@ -135,11 +133,11 @@ export default function Home() {
 										alt="Personal Portfolio"
 									></Image>*/}
 									<div className="flex flex-wrap gap-1.5">
-										<TechStack name="Next.js" icon="nextdotjs" color="white"/>
-										<TechStack name="React" icon="react"/>
-										<TechStack name="Vercel" icon="vercel" color="white"/>
-										<TechStack name="Motion.dev" icon="motion"/>
-										<TechStack name="TypeScript" icon="typescript"/>
+										<TechStack name="Next.js" icon="nextdotjs" color="white" />
+										<TechStack name="React" icon="react" />
+										<TechStack name="Vercel" icon="vercel" color="white" />
+										<TechStack name="Motion.dev" icon="motion" />
+										<TechStack name="TypeScript" icon="typescript" />
 									</div>
 								</div>
 							</motion.div>
@@ -157,8 +155,7 @@ export default function Home() {
 										width={395}
 										height={464}
 										quality={100}
-										alt="CodeGrab"
-									></Image>
+										alt="CodeGrab" />
 									<div className="flex flex-wrap gap-1.5">
 										<TechStack name="TypeScript" icon="typescript" />
 										<TechStack name="Chrome Web Store" icon="chromewebstore" />
@@ -177,13 +174,12 @@ export default function Home() {
 										width={2900}
 										height={537}
 										quality={100}
-										alt="BySaether"
-									></Image>
+										alt="BySaether" />
 									<div className="flex flex-wrap gap-1.5">
-										<TechStack name="Next.js" icon="nextdotjs" color="white"/>
-										<TechStack name="React" icon="react"/>
-										<TechStack name="Vercel" icon="vercel" color="white"/>
-										<TechStack name="TypeScript" icon="typescript"/>
+										<TechStack name="Next.js" icon="nextdotjs" color="white" />
+										<TechStack name="React" icon="react" />
+										<TechStack name="Vercel" icon="vercel" color="white" />
+										<TechStack name="TypeScript" icon="typescript" />
 									</div>
 								</div>
 							</motion.div>
@@ -204,6 +200,7 @@ export default function Home() {
 								<TechStack name="Vue.js" icon="vuedotjs" />
 								<TechStack name="React" icon="react" />
 								<TechStack name="React Native" icon="react" />
+								<TechStack name="Expo" icon="expo" color="white" />
 								<TechStack name="Motion.dev" icon="motion" />
 								<TechStack name="TypeScript" icon="typescript" />
 								<TechStack name="Tailwind CSS" icon="tailwindcss" />
