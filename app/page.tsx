@@ -5,7 +5,7 @@ import {motion, useScroll, useTransform} from "motion/react"
 import TechIcon from "@/components/TechIcon";
 import {
 	Aperture, ArrowRight,
-	Brain,
+	Brain, BrainCircuit,
 	CodeXml,
 	Cpu, Film,
 	GitBranch,
@@ -259,6 +259,7 @@ export default function Home() {
 							</div>
 							<div className="flex flex-wrap gap-1.5">
 								<OtherStack name="Artificial Intelligence" icon={<Brain size={16} color="#9bf332" />} />
+								<OtherStack name="Machine Learning" icon={<BrainCircuit size={16} color="#3b95ff" />} />
 							</div>
 						</div>
 						<div className="flex flex-col gap-4 p-4 bg-neutral-900 rounded-2xl">
