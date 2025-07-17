@@ -55,7 +55,7 @@ export default function Home() {
 				<div className="grid grid-cols-2 gap-x-4 w-full max-w-6xl mx-auto mt-30 relative">
 					<div className="flex flex-col justify-center items-start">
 						<h1 className="font-bold text-left">
-							<span className="text-5xl font-bold">
+							<span className="text-6xl font-bold">
 								I'm
 							</span>
 							<br/>
@@ -78,13 +78,15 @@ export default function Home() {
 						<div className="flex gap-4 mt-12">
 							<div className="card-wrapper blue rounded-full cursor-pointer group">
 								<div className="card-border"/>
-								<div className="card-content p-1 inline-flex">
+								<div className="card-content p-1 inline-flex w-fit!">
 									<span className="z-10 text-nowrap mx-3 my-auto font-semibold transition-all duration-300 group-hover:text-black">Let's Connect</span>
 									<span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-white opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 group-hover:translate-x-0"/>
-									<span className="z-10 flex items-center justify-center overflow-hidden rounded-full p-2.5 bg-white transition-colors duration-300 ease-in-out group-hover:bg-transparent">
-										<ArrowRight size={18} className="text-black shrink-0 transition-all duration-300 group-hover:translate-x-5 group-hover:opacity-0" />
-										<ArrowRight size={18} className="text-black absolute transition-all duration-300 -translate-x-5 opacity-0 group-hover:translate-x-0 group-hover:opacity-100" />
-									</span>
+									<div className="relative w-[38px]">
+										<span className="z-10 flex items-center justify-center overflow-hidden rounded-full p-2.5 bg-white transition-colors duration-300 ease-in-out group-hover:bg-transparent">
+											<ArrowRight size={18} className="text-black shrink-0 transition-all duration-300 group-hover:translate-x-5 group-hover:opacity-0" />
+											<ArrowRight size={18} className="text-black absolute transition-all duration-300 -translate-x-5 opacity-0 group-hover:translate-x-0 group-hover:opacity-100" />
+										</span>
+									</div>
 								</div>
 							</div>
 							<button className="bg-linear-to-r from-blue-400 from-0% to-blue-500 to-100% text-white font-bold px-5 py-3 rounded-full cursor-pointer">DOWNLOAD CV</button>
