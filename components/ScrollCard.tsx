@@ -28,7 +28,8 @@ export function ScrollCard({ card, onInView }: CardProps) {
 	return (
 		<motion.div
 			ref={ref}
-			className="h-[600px] border-1 rounded-xl flex items-center justify-center cursor-pointer group overflow-hidden"
+			className="h-[600px] rounded-xl flex items-center justify-center cursor-pointer group overflow-hidden"
+			style={{ borderColor: card.primaryColor }}
 			initial={{ scale: 0.9, opacity: 0 }}
 			animate={animationInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
 			transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -43,7 +44,7 @@ export function ScrollCard({ card, onInView }: CardProps) {
 						alt="Picture inside of Obs BYGG"
 						width={800}
 						height={600}
-						className="rounded-t-2xl border-1 border-white/20"
+						className="rounded-t-2xl border-1 border-white/20 aspect-3/2 object-cover"
 						style={{ boxShadow: "0 0 30px " + card.secondaryColor }}
 					/>
 				</div>

@@ -17,9 +17,9 @@ export type Card = {
 const cards: Card[] = [
 	{
 		id: "vizrt",
-		primaryColor: "#f0824f",
-		secondaryColor: "#ffd2bf",
-		image: "/images/pictures/obsbygg.avif",
+		primaryColor: "#e85725",
+		secondaryColor: "#f58557",
+		image: "/images/pictures/vizrt.webp",
 		company: "Vizrt",
 		role: "Software Developer (Bachelor Project)",
 		description:
@@ -27,21 +27,10 @@ const cards: Card[] = [
 			"collaborated in an agile team, and learned enterprise-level software practices.",
 	},
 	{
-		id: "bysaether",
-		primaryColor: "#3da0fd",
-		secondaryColor: "#afd7ff",
-		image: "/images/pictures/obsbygg.avif",
-		company: "BySaether (Freelance)",
-		role: "Freelance Developer & Designer",
-		description:
-			"Built modern web applications and mobile apps under my own brand. Design work " +
-			"and technical implementation using Next.js, React Native, and Tailwind CSS.",
-	},
-	{
 		id: "obsbygg",
-		primaryColor: "#fb4c00",
-		secondaryColor: "#ffbe9e",
-		image: "/images/pictures/obsbygg.avif",
+		primaryColor: "#003975",
+		secondaryColor: "#387bbd",
+		image: "/images/pictures/obsbygg.webp",
 		company: "Obs BYGG",
 		role: "Retail Employee",
 		description:
@@ -56,7 +45,7 @@ export default function Experience() {
 	const activeExp = cards.find((p) => p.id === activeId) || null;
 
 	return (
-		<div className="flex gap-8 px-8 py-12">
+		<div className="w-full max-w-7xl mb-20 flex gap-8 px-8 py-12">
 			<div className="flex flex-col gap-24 w-3/5">
 				{cards.map((card) => (
 					<ScrollCard
