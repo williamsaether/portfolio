@@ -12,7 +12,7 @@ import Skills from "@/components/Skills";
 export default function Home() {
 	return (
 		<main className="relative flex flex-col items-center justify-center">
-			<div className="absolute top-0 left-0 right-0 h-[200%] overflow-hidden">
+			<div className="absolute top-0 left-0 right-0 h-[200vh] overflow-hidden">
 				<div
 					className="absolute top-[150px] left-1/2 -translate-x-2/5 w-[1000px] h-[800px]"
 					style={{

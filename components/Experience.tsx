@@ -8,9 +8,11 @@ export type Card = {
 	id: string;
 	primaryColor: string;
 	secondaryColor: string;
+	textColor: string;
 	image: string;
 	company: string;
 	role: string;
+	text: string;
 	description: string;
 };
 
@@ -19,9 +21,11 @@ const cards: Card[] = [
 		id: "vizrt",
 		primaryColor: "#e85725",
 		secondaryColor: "#f58557",
+		textColor: "#ffdbcf",
 		image: "/images/pictures/vizrt.webp",
 		company: "Vizrt",
 		role: "Software Developer (Bachelor Project)",
+		text: "Centralized App Launcher for Vizrt's Web Apps",
 		description:
 			"Worked on an app launcher for Vizrt's web platform. Developed Vue and Node.js components, " +
 			"collaborated in an agile team, and learned enterprise-level software practices.",
@@ -30,9 +34,11 @@ const cards: Card[] = [
 		id: "obsbygg",
 		primaryColor: "#003975",
 		secondaryColor: "#387bbd",
+		textColor: "#a4d2ff",
 		image: "/images/pictures/obsbygg.webp",
 		company: "Obs BYGG",
 		role: "Retail Employee",
+		text: "",
 		description:
 			"Assisted customers with products and services, learned valuable communication and " +
 			"problem-solving skills, and gained experience in customer support.",

@@ -104,6 +104,10 @@ body {
 	.small .card-content {
 		@apply inline-flex p-1 w-fit!;
 	}
+
+	.skills-card {
+		@apply flex flex-col gap-4 p-4 bg-neutral-900 rounded-2xl border-1 border-neutral-800;
+	}
 }
 
 @keyframes border-spin {

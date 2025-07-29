@@ -28,16 +28,21 @@ export function ScrollCard({ card, onInView }: CardProps) {
 	return (
 		<motion.div
 			ref={ref}
-			className="h-[600px] rounded-xl flex items-center justify-center cursor-pointer group overflow-hidden"
-			style={{ borderColor: card.primaryColor }}
+			className="h-[550px] relative rounded-xl cursor-pointer group p-2 bg-neutral-800 border-1 border-neutral-700"
 			initial={{ scale: 0.9, opacity: 0 }}
 			animate={animationInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
 			transition={{ duration: 0.4, ease: "easeInOut" }}
 		>
+			<div className="absolute top-0 left-4 right-4 h-[2px] bg-linear-90 from-transparent via-white to-transparent" />
+			<div className="absolute top-2 left-4 right-4 h-[1px] bg-linear-90 from-transparent via-[#ffffffbf] to-transparent" />
 			<div
-				className="w-full h-full px-16 flex justify-end items-end"
-				style={{ background: "linear-gradient(to bottom, " + card.primaryColor + ", " + card.secondaryColor + ")" }}
+				className="w-full h-full px-16 flex flex-col justify-between overflow-hidden rounded-lg"
+				style={{
+					backgroundColor: "white",
+					backgroundImage: "linear-gradient(190deg, " + card.primaryColor + " 20%, " + card.secondaryColor + " 60%, " + card.secondaryColor + "40 100%)"
+				}}
 			>
+				<p className="text-2xl mt-12" style={{ color: card.textColor }}>{card.text}</p>
 				<div className="translate-y-5 transition-all duration-300 group-hover:scale-105 group-hover:-rotate-3">
 					<Image
 						src={card.image}
@@ -45,7 +50,7 @@ export function ScrollCard({ card, onInView }: CardProps) {
 						width={800}
 						height={600}
 						className="rounded-t-2xl border-1 border-white/20 aspect-3/2 object-cover"
-						style={{ boxShadow: "0 0 30px " + card.secondaryColor }}
+						style={{ boxShadow: "0 0 15px " + card.secondaryColor }}
 					/>
 				</div>
 			</div>
