@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import Image from "next/image";
-import {Card} from "@/components/Experience";
+import {Card} from "@/components/Projects";
 
 type CardProps = {
 	card: Card;
@@ -28,15 +28,15 @@ export function ScrollCard({ card, onInView }: CardProps) {
 	return (
 		<motion.div
 			ref={ref}
-			className="h-[550px] relative rounded-xl cursor-pointer group p-2 bg-neutral-800 border-1 border-neutral-700"
+			className="h-[550px] relative rounded-3xl cursor-pointer group p-2 bg-neutral-800 border-1 border-neutral-700"
 			initial={{ scale: 0.9, opacity: 0 }}
 			animate={animationInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
 			transition={{ duration: 0.4, ease: "easeInOut" }}
 		>
-			<div className="absolute top-0 left-4 right-4 h-[2px] bg-linear-90 from-transparent via-white to-transparent" />
+			<div className="absolute top-0 left-4 right-4 h-[1px] bg-linear-90 from-transparent via-white to-transparent" />
 			<div className="absolute top-2 left-4 right-4 h-[1px] bg-linear-90 from-transparent via-[#ffffffbf] to-transparent" />
 			<div
-				className="w-full h-full px-16 flex flex-col justify-between overflow-hidden rounded-lg"
+				className="w-full h-full px-16 flex flex-col justify-between overflow-hidden rounded-2xl"
 				style={{
 					backgroundColor: "white",
 					backgroundImage: "linear-gradient(190deg, " + card.primaryColor + " 20%, " + card.secondaryColor + " 60%, " + card.secondaryColor + "40 100%)"
@@ -46,7 +46,7 @@ export function ScrollCard({ card, onInView }: CardProps) {
 				<div className="translate-y-5 transition-all duration-300 group-hover:scale-105 group-hover:-rotate-3">
 					<Image
 						src={card.image}
-						alt="Picture inside of Obs BYGG"
+						alt={card.link}
 						width={800}
 						height={600}
 						className="rounded-t-2xl border-1 border-white/20 aspect-3/2 object-cover"

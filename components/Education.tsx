@@ -14,7 +14,7 @@ const timelineEvents = [
 		description:
 			"Bachelor's degree in Computer Engineering at HVL. Studied topics including software engineering, networks, " +
 			"and embedded systems. Specialized in machine learning and artificial intelligence.",
-		keywords: ["GPA: 4.58 / 5"],
+		keywords: ["GPA: 4.59 / 5"],
 		subjects: [
 			"Networking",
 			"Embedded Systems",
@@ -38,7 +38,7 @@ const timelineEvents = [
 				as a <a href="https://en.wikipedia.org/wiki/Sivilingeniør" target="_blank" rel="noreferrer" className="underline">
 					sivilingeniør
 				</a>, not to be confused with a civil engineer.</>,
-		keywords: ["Not started yet"],
+		keywords: ["Undergoing"],
 		subjects: [
 			"Software Dev",
 			"Teamwork"

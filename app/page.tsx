@@ -4,9 +4,9 @@ import Image from "next/image";
 import { motion } from "motion/react"
 import { ArrowRight } from "lucide-react";
 import React from "react";
-import Experience from "@/components/Experience";
-import Education from "@/components/Education";
 import Projects from "@/components/Projects";
+import Education from "@/components/Education";
+import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 
 export default function Home() {

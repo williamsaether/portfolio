@@ -1,10 +1,13 @@
 'use client'
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { ScrollCard } from "@/components/ScrollCard";
+import { motion } from "motion/react";
+import Image from "next/image";
+import React from "react";
+import TechStack from "@/components/TechStack";
+import OtherStack from "@/components/OtherStack";
+import {Handshake, SquareCheckBig} from "lucide-react";
 
-export type Card = {
+type CardProps = {
 	id: string;
 	primaryColor: string;
 	secondaryColor: string;
@@ -14,9 +17,14 @@ export type Card = {
 	role: string;
 	text: string;
 	description: string;
-};
+	stack: React.JSX.Element[];
+}
 
-const cards: Card[] = [
+type Card = {
+	card: CardProps;
+}
+
+const cards: CardProps[] = [
 	{
 		id: "vizrt",
 		primaryColor: "#e85725",
@@ -26,79 +34,78 @@ const cards: Card[] = [
 		company: "Vizrt",
 		role: "Software Developer (Bachelor Project)",
 		text: "Centralized App Launcher for Vizrt's Web Apps",
-		description:
-			"Worked on an app launcher for Vizrt's web platform. Developed Vue and Node.js components, " +
+		description: "Worked on an app launcher for Vizrt's web platform. Developed Vue and Node.js components, " +
 			"collaborated in an agile team, and learned enterprise-level software practices.",
+		stack: [
+			<TechStack key="vue.js" name="Vue.js" icon="vuedotjs"/>,
+			<TechStack key="typescript" name="TypeScript" icon="typescript"/>,
+			<TechStack key="docker" name="Docker" icon="docker"/>,
+			<TechStack key="git" name="Git" icon="git"/>,
+			<TechStack key="express" name="Express" icon="express" color="white"/>,
+			<TechStack key="node.js" name="Node.js" icon="nodedotjs"/>,
+			<TechStack key="postgres" name="PostgreSQL" icon="postgresql"/>,
+			<TechStack key="figma" name="Figma" icon="figma"/>,
+		]
 	},
 	{
 		id: "obsbygg",
 		primaryColor: "#003975",
 		secondaryColor: "#387bbd",
 		textColor: "#a4d2ff",
-		image: "/images/pictures/obsbygg.webp",
+		image: "/images/pictures/obs-bygg.svg",
 		company: "Obs BYGG",
 		role: "Retail Employee",
 		text: "",
-		description:
-			"Assisted customers with products and services, learned valuable communication and " +
+		description: "Assisted customers with products and services, learned valuable communication and " +
 			"problem-solving skills, and gained experience in customer support.",
+		stack: [
+			<OtherStack key="comm" name="Communication" icon={<Handshake size={16} color="yellow" />} />,
+			<OtherStack key="prob" name="Problem-solving" icon={<SquareCheckBig size={16} color="lightgreen" />} />,
+		]
 	},
-];
+]
 
 export default function Experience() {
-	const [activeId, setActiveId] = useState<string | null>(cards[0].id);
 
-	const activeExp = cards.find((p) => p.id === activeId) || null;
+	function Card({card}: Card) {
+		return (
+			<motion.div whileHover={{ scale: 1.005 }} className="card-wrapper rounded-2xl">
+				<div className="card-border"/>
+				<div className="card-content grid gap-2 p-5">
+					<h3 className="text-3xl font-bold">{card.company}</h3>
+					<p className="text-sm text-neutral-400">{card.role}</p>
+					<p>{card.description}</p>
+					<Image
+						className="max-h-[20rem] h-full w-auto rounded-xl"
+						src={card.image}
+						width={500}
+						height={667}
+						quality={100}
+						alt={card.company}
+					/>
+					<div className="flex flex-wrap gap-1.5">
+						{card.stack}
+					</div>
+				</div>
+			</motion.div>
+		)
+	}
 
 	return (
-		<div className="w-full max-w-7xl mb-20 flex gap-8 px-8 py-12">
-			<div className="flex flex-col gap-24 w-3/5">
-				{cards.map((card) => (
-					<ScrollCard
-						key={card.id}
-						card={card}
-						onInView={(id) => {
-							if (activeId !== id) setActiveId(id);
-						}}
-					/>
+		<div className="grid grid-cols-2 gap-4 w-full max-w-5xl mx-auto my-10">
+			<div className="flex flex-col gap-3 items-center col-start-1 col-end-3 mb-20">
+				<span className="text-xl font-normal tracking-widest opacity-70">EXPERIENCE</span>
+				<span className="text-6xl font-semibold text-glow">What I've <span className="gradient-text">Done For Work</span></span>
+			</div>
+			<div className="flex flex-col gap-4">
+				{cards.filter((card) => ["vizrt"].includes(card.id)).map((card) => (
+					<Card key={card.id} card={card} />
 				))}
 			</div>
-
-			<div className="w-2/5 sticky top-8 py-4 text-white">
-				<div className="w-full sticky top-56 text-white">
-					<AnimatePresence mode="wait">
-						{activeExp ? (
-							<motion.div
-								key={activeExp.id}
-								initial={{ opacity: 0, y: 10 }}
-								animate={{ opacity: 1, y: 0 }}
-								exit={{ opacity: 0, y: -10 }}
-								transition={{ duration: 0.1}}
-								className="relative ml-14"
-							>
-								<span
-									className="absolute top-4 -left-14 w-8 h-1 rounded-full outline-2"
-									style={{ background: activeExp.primaryColor, outlineColor: (activeExp.primaryColor + "20") }}/>
-								<h2 className="text-3xl font-bold mb-2">
-									{activeExp.company}
-								</h2>
-								<h3 className="text-base font-semibold mb-2 text-neutral-400">
-									{activeExp.role}
-								</h3>
-								<p className="text-gray-300">{activeExp.description}</p>
-							</motion.div>
-						) : (
-							<motion.div
-								key="placeholder"
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								exit={{ opacity: 0 }}
-							>
-								<p>Click an experience to see details →</p>
-							</motion.div>
-						)}
-					</AnimatePresence>
-				</div>
+			<div className="flex flex-col gap-4">
+				{cards.filter((card) => ["obsbygg"].includes(card.id)).map((card) => (
+					<Card key={card.id} card={card} />
+				))}
 			</div>
 		</div>
 	);
