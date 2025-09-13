@@ -108,6 +108,22 @@ body {
 	.skills-card {
 		@apply flex flex-col gap-4 p-4 bg-neutral-900 rounded-2xl border-1 border-neutral-800;
 	}
+
+	.stylized-list {
+		@apply my-2
+	}
+
+	.stylized-list li {
+		@apply relative pl-8
+	}
+
+	.stylized-list li svg {
+		background: conic-gradient(var(--color-blue-300), var(--color-blue-400), var(--color-blue-300));
+		--mask: no-repeat url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="red" stroke="red" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles-icon lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>');
+		-webkit-mask: var(--mask);
+		mask: var(--mask);
+		@apply absolute top-[50%] left-0 w-4.5 h-4.5 translate-y-[-50%];
+	}
 }
 
 @keyframes border-spin {
