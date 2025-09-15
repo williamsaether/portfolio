@@ -16,12 +16,13 @@ const timelineEvents = [
 			"and embedded systems. Specialized in machine learning and artificial intelligence.",
 		keywords: ["GPA: 4.59 / 5"],
 		subjects: [
-			"Networking",
-			"Embedded Systems",
+			"Programming",
+			"Algorithms",
 			"Databases",
-			"Software Dev",
-			"Security",
-			"AI Basics",
+			"Networking",
+			"Software Development",
+			"Machine Learning",
+			"Deep Learning"
 		],
 		image: "/images/hvl.webp",
 		position: 30,
@@ -39,10 +40,7 @@ const timelineEvents = [
 					sivilingeniør
 				</a>, not to be confused with a civil engineer.</>,
 		keywords: ["Undergoing"],
-		subjects: [
-			"Software Dev",
-			"Teamwork"
-		],
+		subjects: [],
 		image: "/images/ntnu.webp",
 		position: 70,
 	},
@@ -132,8 +130,8 @@ export default function Education() {
 											<span key={i} className="bg-blue-900 text-xs text-white px-3 py-1 rounded-full">{point}</span>
 										))}
 									</div>
-									<div className="grid grid-cols-[max-content_10rem] justify-between items-center mt-4">
-										<div className="grid grid-cols-3 grid-rows-2 gap-2">
+									<div className="grid grid-cols-[auto_10rem] justify-between items-center mt-4">
+										<div className="flex flex-wrap gap-2">
 											{event.subjects?.map((subject, i) => (
 												<span key={i} className="bg-neutral-700 text-xs text-white px-2 py-1 rounded-md text-center">
 													{subject}
@@ -147,6 +145,7 @@ export default function Education() {
 													alt={event.title}
 													width={500}
 													height={150}
+													quality={100}
 													className="object-contain w-full"
 												/>
 											</a>

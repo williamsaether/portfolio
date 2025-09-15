@@ -55,7 +55,7 @@ export default function Home() {
 						<div className="flex gap-4 mt-12">
 							<div className="small card-wrapper blue rounded-full cursor-pointer group">
 								<div className="card-border"/>
-								<div className="card-content">
+								<a className="card-content" href="https://contact.bysaether.com" target="_blank" rel="noopener noreferrer">
 									<span className="z-10 text-nowrap mx-3 my-auto font-semibold transition-all duration-300 group-hover:text-black">Let's Connect</span>
 									<span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-white opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 group-hover:translate-x-0"/>
 									<div className="relative w-[38px]">
@@ -64,7 +64,7 @@ export default function Home() {
 											<ArrowRight size={18} className="text-black absolute transition-all duration-300 -translate-x-5 opacity-0 group-hover:translate-x-0 group-hover:opacity-100" />
 										</span>
 									</div>
-								</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -73,6 +73,7 @@ export default function Home() {
 						src="/images/portrait.webp"
 						width={1000}
 						height={1234}
+						priority
 						quality={100}
 						alt="Picture of William Sæther" />
 					<div className="h-[2px] col-start-1 col-end-4 bg-linear-to-r from-transparent from-0% via-blue-400 via-80% to-transparent to-100%"></div>
@@ -89,6 +90,10 @@ export default function Home() {
 					<Experience/>
 				</section>
 				<section id="education">
+					<div className="flex flex-col gap-3 items-center col-start-1 col-end-3 mb-20 mt-30">
+						<span className="text-xl font-normal tracking-widest opacity-70">EDUCATION</span>
+						<span className="text-6xl font-semibold text-glow">What I've <span className="gradient-text">Studied</span></span>
+					</div>
 					<Education/>
 				</section>
 			</div>

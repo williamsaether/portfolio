@@ -1,9 +1,13 @@
+'use client'
+
 import Link from "next/link";
 import Image from "next/image";
-import {File, FileUser} from "lucide-react";
 import React from "react";
+import {usePathname} from "next/navigation";
 
 export default function Header() {
+	const pathname = usePathname()
+
 	return (
 		<div>
 			<div className="pointer-events-none fixed top-0 left-0 z-30 w-full h-24">
@@ -21,28 +25,38 @@ export default function Header() {
 					<ul className="flex gap-2">
 						<li className="relative">
 							<Link className="inline-block px-4 py-1" href="/">Home</Link>
-							<div className="bg-neutral-700 absolute inset-0 w-full rounded-full -z-10">
-								<div className="bg-neutral-100 absolute -top-[9px] left-1/2 h-1 w-8 -translate-x-1/2 rounded-t-full"></div>
-							</div>
+							{pathname == "/" && <div className="bg-neutral-700 absolute inset-0 w-full rounded-full -z-10">
+								<div
+									className="bg-neutral-100 absolute -top-[9px] left-1/2 h-1 w-8 -translate-x-1/2 rounded-t-full"></div>
+							</div>}
 						</li>
 						<li className="relative">
 							<Link className="inline-block px-4 py-1" href="/projects">Projects</Link>
-							<div></div>
+							{pathname == "/projects" && <div className="bg-neutral-700 absolute inset-0 w-full rounded-full -z-10">
+								<div
+									className="bg-neutral-100 absolute -top-[9px] left-1/2 h-1 w-8 -translate-x-1/2 rounded-t-full"></div>
+							</div>}
 						</li>
 						<li className="relative">
 							<Link className="inline-block px-4 py-1" href="/experience">Experience</Link>
-							<div></div>
+							{pathname == "/experience" && <div className="bg-neutral-700 absolute inset-0 w-full rounded-full -z-10">
+								<div
+									className="bg-neutral-100 absolute -top-[9px] left-1/2 h-1 w-8 -translate-x-1/2 rounded-t-full"></div>
+							</div>}
 						</li>
 						<li className="relative">
 							<Link className="inline-block px-4 py-1" href="/education">Education</Link>
-							<div></div>
+							{pathname == "/education" && <div className="bg-neutral-700 absolute inset-0 w-full rounded-full -z-10">
+								<div
+									className="bg-neutral-100 absolute -top-[9px] left-1/2 h-1 w-8 -translate-x-1/2 rounded-t-full"></div>
+							</div>}
 						</li>
 					</ul>
 				</div>
-				<Link href="/" className="relative z-40">
+				{/*<Link href="/" className="relative z-40">
 					<span className="absolute top-2/3 left-1/2 -translate-1/2 text-xs font-bold">CV</span>
 					<File className="size-8" />
-				</Link>
+				</Link>*/}
 			</nav>
 		</div>
 	);

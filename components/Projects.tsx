@@ -100,7 +100,7 @@ const cards: Card[] = [
 		image: "/images/pictures/bysaether.webp",
 		name: "BySaether.com",
 		link: "https://bysaether.com",
-		text: "Portfolio website for BySaether",
+		text: "Portfolio website for BySaether.",
 		description: "The digital home for BySaether - a brand uniting projects, products, and creative ventures. " +
 			"Built as a sleek, fast-loading static site, it provides visitors a clean overview of apps, projects, " +
 			"and ways to connect.",
