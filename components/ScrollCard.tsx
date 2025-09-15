@@ -7,10 +7,10 @@ import {Card} from "@/components/Projects";
 
 type CardProps = {
 	card: Card;
-	onInView: (id: string) => void;
+	action: (id: string) => void;
 };
 
-export function ScrollCard({ card, onInView }: CardProps) {
+export function ScrollCard({ card, action }: CardProps) {
 	const ref = useRef<HTMLDivElement | null>(null);
 
 	const animationInView = useInView(ref, { once: false, amount: 0.15 });
@@ -20,10 +20,10 @@ export function ScrollCard({ card, onInView }: CardProps) {
 
 	useEffect(() => {
 		if (triggerInView && !prevInView.current) {
-			onInView(card.id);
+			action(card.id);
 		}
 		prevInView.current = triggerInView;
-	}, [triggerInView, card.id, onInView]);
+	}, [triggerInView, card.id, action]);
 
 	return (
 		<motion.div

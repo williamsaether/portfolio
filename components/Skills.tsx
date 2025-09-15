@@ -38,6 +38,7 @@ export default function Skills() {
 					<TechStack name="Motion.dev" icon="motion" />
 					<TechStack name="TypeScript" icon="typescript" />
 					<TechStack name="Tailwind CSS" icon="tailwindcss" />
+					<TechStack name="MDX" icon="mdx" color="fcb32c" />
 				</div>
 			</div>
 			<div className="skills-card">

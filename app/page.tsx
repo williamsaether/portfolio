@@ -76,6 +76,11 @@ export default function Home() {
 						priority
 						quality={100}
 						alt="Picture of William Sæther" />
+					<div className="flex gap-2 absolute bottom-10 left-1/2 -translate-x-1/2 pl-1 pr-2 py-1 bg-[#262626aa]
+						rounded-full border-1 border-neutral-700 text-sm font-bold">
+						<span className="py-0.5 px-1.5 bg-indigo-600 rounded-full text-xs">DEV</span>
+						Website under Construction
+					</div>
 					<div className="h-[2px] col-start-1 col-end-4 bg-linear-to-r from-transparent from-0% via-blue-400 via-80% to-transparent to-100%"></div>
 				</div>
 			</section>

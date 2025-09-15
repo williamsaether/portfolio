@@ -87,9 +87,10 @@ const cards: Card[] = [
 			<TechStack key="nextjs" name="Next.js" icon="nextdotjs" color="white"/>,
 			<TechStack key="react" name="React" icon="react"/>,
 			<TechStack key="typescript" name="TypeScript" icon="typescript"/>,
+			<TechStack key="motiondev" name="Motion.dev" icon="motion"/>,
 			<TechStack key="tailwindcss" name="Tailwind CSS" icon="tailwindcss"/>,
 			<TechStack key="vercel" name="Vercel" icon="vercel" color="white"/>,
-			<TechStack key="motiondev" name="Motion.dev" icon="motion"/>
+			<TechStack key="mdx" name="MDX" icon="mdx" color="fcb32c"/>
 		],
 	},
 	{
@@ -130,7 +131,7 @@ export default function Projects() {
 					<ScrollCard
 						key={card.id}
 						card={card}
-						onInView={(id) => {
+						action={(id) => {
 							if (activeId !== id) setActiveId(id);
 						}}
 					/>
