@@ -125,20 +125,34 @@ export default function Projects() {
 	const active = cards.find((p) => p.id === activeId) || null;
 
 	return (
-		<div className="w-full max-w-7xl mb-20 flex gap-8 px-8 py-12">
-			<div className="flex flex-col gap-24 w-3/5">
+		<div className="relative w-full max-w-7xl mb-20 flex flex-col lg:flex-row gap-8 px-8 py-12">
+			<div className="flex flex-col gap-24 lg:w-3/5">
 				{cards.map((card) => (
-					<ScrollCard
-						key={card.id}
-						card={card}
-						action={(id) => {
-							if (activeId !== id) setActiveId(id);
-						}}
-					/>
+					<div key={card.id} className="flex flex-col gap-4">
+						<ScrollCard
+							key={card.id}
+							card={card}
+							action={(id) => {
+								if (activeId !== id) setActiveId(id);
+							}}
+						/>
+						<div className="flex flex-col gap-1 lg:hidden">
+							<h2 className="text-3xl font-bold">
+								{card.name}
+							</h2>
+							<a className="text-base font-semibold text-neutral-400" href={card.link} target="_blank" rel="noopener noreferrer">
+								{card.link.split('//')[1]}
+							</a>
+							<p className="text-gray-300 line-clamp-3">{card.description}</p>
+							<div className="flex gap-2 flex-wrap">
+								{card.techStack}
+							</div>
+						</div>
+					</div>
 				))}
 			</div>
 
-			<div className="w-2/5 sticky top-8 py-4 text-white">
+			<div className="hidden lg:block sticky w-2/5 top-8 py-4 text-white">
 				<div className="w-full sticky top-56 text-white">
 					<AnimatePresence mode="wait">
 						{active ? (
@@ -183,7 +197,7 @@ export default function Projects() {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
 							>
-								<p>Click an experience to see details →</p>
+								<p>Click on a project to see details →</p>
 							</motion.div>
 						)}
 					</AnimatePresence>

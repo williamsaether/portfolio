@@ -12,9 +12,9 @@ import Skills from "@/components/Skills";
 export default function Home() {
 	return (
 		<main className="relative flex flex-col items-center justify-center">
-			<div className="absolute top-0 left-0 right-0 h-[150vh] lg:h-[200vh] overflow-hidden">
+			<div className="absolute top-0 left-0 right-0 h-[100vh] lg:h-[200vh] overflow-hidden">
 				<div
-					className="absolute top-[150px] left-1/2 -translate-x-2/5 w-[1000px] h-[800px] max-w-full max-h-2/5 bg-size-[60_60] lg:bg-size-[90_90]"
+					className="absolute top-[250px] lg:top-[150px] left-1/2 -translate-x-2/5 w-[1000px] h-[800px] max-w-3/5 max-h-2/5 bg-size-[50_50] lg:bg-size-[90_90]"
 					style={{
 						backgroundImage: "linear-gradient(to right, #aaaaaa4a 1px, transparent 1px), linear-gradient(to bottom, #aaaaaa4a 1px, transparent 1px)",
 						maskImage: "radial-gradient(circle at center, rgba(0,0,0,1) 20%, rgba(0,0,0,0) 60%)",
@@ -27,7 +27,7 @@ export default function Home() {
 				<div className="absolute top-[-20px] left-[-150px] w-[1400px] h-[1000px] max-h-1/2 bg-radial from-blue-700 via-transparent to-transparent opacity-10"/>
 				<div className="absolute top-[50px] right-[0px] w-[1600px] h-[1200px] max-h-1/2 bg-radial from-purple-400 via-transparent to-transparent opacity-15"/>
 			</div>
-			<section id="hero" className="relative min-h-screen w-full mb-10 overflow-hidden">
+			<section id="hero" className="relative lg:min-h-screen w-full mb-10 overflow-hidden">
 				<div className="grid grid-rows-[auto_20rem] lg:grid-cols-2 gap-x-4 w-full max-w-6xl mx-auto mt-40 lg:mt-30 px-10 relative">
 					<div className="flex flex-col gap-4 justify-center items-start">
 						<div className="text-left">
