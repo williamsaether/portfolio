@@ -8,6 +8,7 @@ import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import EducationMDX from "@/markdown/education.mdx";
 
 export default function Home() {
 	return (
@@ -27,19 +28,19 @@ export default function Home() {
 				<div className="absolute top-[-20px] left-[-150px] w-[1400px] h-[1000px] max-h-1/2 bg-radial from-blue-700 via-transparent to-transparent opacity-10"/>
 				<div className="absolute top-[50px] right-[0px] w-[1600px] h-[1200px] max-h-1/2 bg-radial from-purple-400 via-transparent to-transparent opacity-15"/>
 			</div>
-			<section id="hero" className="relative lg:min-h-screen w-full mb-10 overflow-hidden">
-				<div className="grid grid-rows-[auto_20rem] lg:grid-cols-2 gap-x-4 w-full max-w-6xl mx-auto mt-40 lg:mt-30 px-10 relative">
+			<section id="hero" className="relative md:min-h-screen w-full mb-10 overflow-hidden">
+				<div className="grid grid-rows-[auto_20rem] md:grid-rows-1 md:grid-cols-2 gap-x-4 w-full max-w-6xl mx-auto mt-40 md:mt-30 px-10 relative">
 					<div className="flex flex-col gap-4 justify-center items-start">
 						<div className="text-left">
-							<span className="text-4xl lg:text-6xl font-bold">
+							<span className="text-4xl md:text-6xl font-bold">
 								I'm
 							</span>
 							<br/>
-							<span className="text-4xl lg:text-6xl font-extrabold gradient-text">
+							<span className="text-4xl md:text-6xl font-extrabold gradient-text">
 								William Sæther
 							</span>
 							<br/>
-							<span className="text-2xl lg:text-3xl font-bold">
+							<span className="text-2xl md:text-3xl font-bold">
 								a Fullstack Developer
 							</span>
 						</div>
@@ -51,7 +52,7 @@ export default function Home() {
 								<Image className="size-7" src="/images/icons/github.svg" width={20} height={20} alt="GitHub" priority/>
 							</motion.a>
 						</div>
-						<div className="hidden lg:flex gap-4 lg:mt-8">
+						<div className="hidden md:flex gap-4 md:mt-8">
 							<div className="small card-wrapper blue rounded-full cursor-pointer group">
 								<div className="card-border"/>
 								<a className="card-content" href="https://contact.bysaether.com" target="_blank" rel="noopener noreferrer">
@@ -80,7 +81,7 @@ export default function Home() {
 						<span className="py-0.5 px-1.5 bg-indigo-600 rounded-full text-xs">DEV</span>
 						Website under Construction
 					</div>
-					<div className="h-[2px] col-start-1 lg:col-end-4 bg-linear-to-r from-transparent from-0% via-blue-400 via-80% to-transparent to-100%"></div>
+					<div className="h-[2px] col-start-1 md:col-end-4 bg-linear-to-r from-transparent from-0% via-blue-400 via-80% to-transparent to-100%"></div>
 				</div>
 			</section>
 			<div>
@@ -94,11 +95,16 @@ export default function Home() {
 					<Experience/>
 				</section>
 				<section id="education">
-					<div className="flex flex-col gap-3 items-center col-start-1 col-end-3 mb-20 mt-30">
+					<div className="flex flex-col gap-3 items-center col-start-1 col-end-3 mb-20 mt-30 text-center">
 						<span className="text-xl font-normal tracking-widest opacity-70">EDUCATION</span>
 						<span className="text-6xl font-semibold text-glow">What I've <span className="gradient-text">Studied</span></span>
 					</div>
-					<Education/>
+					<div className="hidden lg:block">
+						<Education/>
+					</div>
+					<div className="prose prose-invert flex lg:hidden flex-col justify-center max-w-5xl mx-auto px-10 lg:px-5">
+						<EducationMDX/>
+					</div>
 				</section>
 			</div>
 		</main>

@@ -125,7 +125,7 @@ export default function Projects() {
 	const active = cards.find((p) => p.id === activeId) || null;
 
 	return (
-		<div className="relative w-full max-w-7xl mb-20 flex flex-col lg:flex-row gap-8 px-8 py-12">
+		<div className="relative w-full max-w-7xl mb-20 flex flex-col lg:flex-row gap-8 px-8 sm:px-12 md:px-16 lg:px-8 py-12">
 			<div className="flex flex-col gap-24 lg:w-3/5">
 				{cards.map((card) => (
 					<div key={card.id} className="flex flex-col gap-4">
