@@ -17,10 +17,10 @@ import OtherStack from "@/components/OtherStack";
 
 export default function Skills() {
 	return (
-		<div className="grid grid-cols-3 gap-4 w-full max-w-6xl mx-auto my-20">
-			<div className="flex flex-col gap-3 items-center col-start-1 col-end-4 mb-20">
+		<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-6xl mx-auto my-20 px-8 lg:px-5">
+			<div className="flex flex-col gap-3 items-center col-start-1 sm:col-end-3 lg:col-end-4 mb-20 text-center">
 				<span className="text-xl font-normal tracking-widest opacity-70">MY SKILLS</span>
-				<span className="text-6xl font-semibold text-glow">My Secret <span className="gradient-text">Weapons</span></span>
+				<span className="text-6xl font-semibold text-glow">The Secret <span className="gradient-text">Weapons</span></span>
 			</div>
 			<div className="skills-card">
 				<div className="flex gap-4 text-2xl items-center">

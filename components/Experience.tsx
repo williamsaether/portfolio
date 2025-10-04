@@ -76,7 +76,7 @@ export default function Experience() {
 					<p className="text-sm text-neutral-400">{card.role}</p>
 					<p>{card.description}</p>
 					<Image
-						className="max-h-[20rem] h-full w-auto rounded-xl"
+						className="max-h-[20rem] h-full w-auto mx-auto my-4 rounded-xl"
 						src={card.image}
 						width={500}
 						height={667}
@@ -93,8 +93,8 @@ export default function Experience() {
 	}
 
 	return (
-		<div className="grid grid-cols-2 gap-4 w-full max-w-5xl mx-auto">
-			<div className="flex flex-col gap-3 items-center col-start-1 col-end-3 mb-20">
+		<div className="grid lg:grid-cols-2 gap-4 w-full max-w-5xl mx-auto px-10 lg:px-5">
+			<div className="flex flex-col gap-3 items-center col-start-1 lg:col-end-3 mb-20 text-center">
 				<span className="text-xl font-normal tracking-widest opacity-70">EXPERIENCE</span>
 				<span className="text-6xl font-semibold text-glow">What I've <span className="gradient-text">Done For Work</span></span>
 			</div>
