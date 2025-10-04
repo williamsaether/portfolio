@@ -75,6 +75,7 @@ export default function Skills() {
 				<div className="flex flex-wrap gap-1.5">
 					<TechStack name="Vercel" icon="vercel" color="white" />
 					<TechStack name="Namecheap" icon="namecheap"/>
+					<TechStack name="Mailgun" icon="mailgun"/>
 				</div>
 			</div>
 			<div className="skills-card">

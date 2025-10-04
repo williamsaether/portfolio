@@ -114,7 +114,8 @@ const cards: Card[] = [
 			<TechStack key="next.js" name="Next.js" icon="nextdotjs" color="white" />,
 			<TechStack key="react" name="React" icon="react" />,
 			<TechStack key="vercel" name="Vercel" icon="vercel" color="white" />,
-			<TechStack key="typescript" name="TypeScript" icon="typescript" />
+			<TechStack key="typescript" name="TypeScript" icon="typescript" />,
+			<TechStack key="mailgun" name="Mailgun" icon="mailgun" />
 		]
 	}
 ];
