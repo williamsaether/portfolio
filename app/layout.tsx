@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ReactLenis from "lenis/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased scroll-smooth selection:bg-blue-950 selection:text-blue-400`}
 			>
+				<SpeedInsights/>
 				<ReactLenis root />
 				<Header/>
 				{children}
