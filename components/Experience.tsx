@@ -14,6 +14,7 @@ type CardProps = {
 	textColor: string;
 	image: string;
 	company: string;
+	link?: {name: string, url: string};
 	role: string;
 	text: string;
 	description: string;
@@ -32,6 +33,7 @@ const cards: CardProps[] = [
 		textColor: "#ffdbcf",
 		image: "/images/pictures/vizrt.webp",
 		company: "Vizrt",
+		link: {name: "Bachelor's thesis (in Norwegian)", url: "https://hdl.handle.net/11250/3201308"},
 		role: "Software Developer (Bachelor Project)",
 		text: "Centralized App Launcher for Vizrt's Web Apps",
 		description: "Worked on an app launcher for Vizrt's web platform. Developed Vue and Node.js components, " +
@@ -74,9 +76,10 @@ export default function Experience() {
 				<div className="card-content grid gap-2 p-5">
 					<h3 className="text-3xl font-bold">{card.company}</h3>
 					<p className="text-sm text-neutral-400">{card.role}</p>
+					<a href={card.link?.url} target="_blank" rel="noreferrer" className="text-sm text-neutral-500 underline">{card.link?.name}</a>
 					<p>{card.description}</p>
 					<Image
-						className="max-h-[20rem] h-full w-auto mx-auto my-4 rounded-xl"
+						className="max-h-[20rem] h-full w-auto mx-auto rounded-xl"
 						src={card.image}
 						width={500}
 						height={667}
