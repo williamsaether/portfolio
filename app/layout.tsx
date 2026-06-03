@@ -27,6 +27,13 @@ export const metadata: Metadata = {
 	alternates: {
 		canonical: "/",
 	},
+	icons: {
+		icon: [
+			{ url: "/images/logo.svg", type: "image/svg+xml" },
+			{ url: "/favicon.ico", sizes: "any" },
+		],
+		shortcut: "/favicon.ico",
+	},
 	openGraph: {
 		title: "William Sæther | Full-Stack Developer",
 		description: "Portfolio of William Sæther, an MSc Computer Science student at NTNU with full-stack, machine learning, computer vision, and product-focused project experience.",
