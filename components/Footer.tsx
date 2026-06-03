@@ -13,7 +13,7 @@ export default function Footer() {
 						height="40"
 						quality={100}
 					/>
-					<p className="text-sm text-wrap">I'm William - a Computer Science student at NTNU. Thanks for checking out my site!</p>
+					<p className="text-sm text-wrap">I&apos;m William - a Computer Science student at NTNU. Thanks for checking out my site!</p>
 				</div>
 				<div className="flex flex-col lg:flex-row gap-2 lg:gap-0 justify-between lg:w-1/4 items-start px-4">
 					<div className="grid grid-cols-3 lg:flex lg:flex-col gap-2">
@@ -31,7 +31,7 @@ export default function Footer() {
 				</div>
 			</div>
 			<div className="opacity-60 ml-10">
-				© 2025 William Sæther
+				© 2026 William Sæther
 			</div>
 		</div>
 	)

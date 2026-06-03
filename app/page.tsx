@@ -8,6 +8,7 @@ import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
+import Achievements from "@/components/Achievements";
 import EducationMDX from "@/markdown/education.mdx";
 
 export default function Home() {
@@ -32,23 +33,26 @@ export default function Home() {
 				<div className="grid grid-rows-[auto_20rem] md:grid-rows-1 md:grid-cols-2 gap-x-4 w-full max-w-6xl mx-auto mt-40 md:mt-30 px-10 relative">
 					<div className="flex flex-col gap-4 justify-center items-start">
 						<div className="text-left">
-							<span className="text-4xl md:text-6xl font-bold">
-								I'm
-							</span>
-							<br/>
-							<span className="text-4xl md:text-6xl font-extrabold gradient-text">
+							<h1 className="flex flex-col">
+								<span className="text-4xl md:text-6xl font-bold">
+									I&apos;m
+								</span>
+								<span className="text-4xl md:text-6xl font-extrabold gradient-text">
 								William Sæther
-							</span>
-							<br/>
-							<span className="text-2xl md:text-3xl font-bold">
-								a Fullstack Developer
-							</span>
+								</span>
+								<span className="text-2xl md:text-3xl font-bold">
+									a full-stack developer
+								</span>
+							</h1>
 						</div>
+						<p className="max-w-xl text-base md:text-lg text-neutral-300">
+							Full-stack developer and MSc Computer Science student at NTNU, building useful software across web, mobile, machine learning, and developer tools.
+						</p>
 						<div className="flex gap-3">
-							<motion.a whileHover={{ scale: 1.1 }} href="https://www.linkedin.com/in/williamsaether/">
+							<motion.a whileHover={{ scale: 1.1 }} href="https://www.linkedin.com/in/williamsaether/" aria-label="William Sæther on LinkedIn">
 								<Image className="size-7" src="/images/icons/linkedin.svg" width={20} height={20} alt="LinkedIn" priority/>
 							</motion.a>
-							<motion.a whileHover={{ scale: 1.1 }} href="https://github.com/williamsaether">
+							<motion.a whileHover={{ scale: 1.1 }} href="https://github.com/williamsaether" aria-label="William Sæther on GitHub">
 								<Image className="size-7" src="/images/icons/github.svg" width={20} height={20} alt="GitHub" priority/>
 							</motion.a>
 						</div>
@@ -56,7 +60,7 @@ export default function Home() {
 							<div className="small card-wrapper blue rounded-full cursor-pointer group">
 								<div className="card-border"/>
 								<a className="card-content" href="https://contact.bysaether.com" target="_blank" rel="noopener noreferrer">
-									<span className="z-10 text-nowrap mx-3 my-auto font-semibold transition-all duration-300 group-hover:text-black">Let's Connect</span>
+									<span className="z-10 text-nowrap mx-3 my-auto font-semibold transition-all duration-300 group-hover:text-black">Let&apos;s Connect</span>
 									<span className="absolute inset-0 translate-x-[45%] scale-0 rounded-full bg-white opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 group-hover:translate-x-0"/>
 									<div className="relative w-[38px]">
 										<span className="z-10 flex items-center justify-center overflow-hidden rounded-full p-2.5 bg-white transition-colors duration-300 ease-in-out group-hover:bg-transparent">
@@ -66,6 +70,12 @@ export default function Home() {
 									</div>
 								</a>
 							</div>
+							<a
+								className="inline-flex items-center rounded-full border border-white bg-white px-5 py-3 text-sm font-semibold text-black transition-colors hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-300"
+								href="/William-Saether-CV.pdf"
+							>
+								Download CV
+							</a>
 						</div>
 					</div>
 					<Image
@@ -76,11 +86,6 @@ export default function Home() {
 						priority
 						quality={100}
 						alt="Picture of William Sæther" />
-					<div className="flex gap-2 absolute bottom-10 left-1/2 -translate-x-1/2 pl-1 pr-2 py-1 bg-[#262626aa]
-						rounded-full border-1 border-neutral-700 text-sm font-bold text-nowrap">
-						<span className="py-0.5 px-1.5 bg-indigo-600 rounded-full text-xs">DEV</span>
-						Website under Construction
-					</div>
 					<div className="h-[2px] col-start-1 md:col-end-4 bg-linear-to-r from-transparent from-0% via-blue-400 via-80% to-transparent to-100%"></div>
 				</div>
 			</section>
@@ -88,6 +93,7 @@ export default function Home() {
 				<section id="projects">
 					<Projects/>
 				</section>
+				<Achievements/>
 				<section id="skills">
 					<Skills/>
 				</section>
@@ -97,7 +103,7 @@ export default function Home() {
 				<section id="education">
 					<div className="flex flex-col gap-3 items-center col-start-1 col-end-3 mb-20 mt-30 text-center">
 						<span className="text-xl font-normal tracking-widest opacity-70">EDUCATION</span>
-						<span className="text-6xl font-semibold text-glow">What I've <span className="gradient-text">Studied</span></span>
+						<span className="text-6xl font-semibold text-glow">What I&apos;ve <span className="gradient-text">Studied</span></span>
 					</div>
 					<div className="hidden lg:block">
 						<Education/>
@@ -106,6 +112,7 @@ export default function Home() {
 						<EducationMDX/>
 					</div>
 				</section>
+				{/* TODO: Render SecurityResearchSection after the advisory is public. */}
 			</div>
 		</main>
 	);

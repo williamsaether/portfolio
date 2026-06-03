@@ -18,8 +18,37 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "William Sæther",
-	description: "Fullstack Developer, Student, Freelancer and Video Editor. Passionate about building things that make a difference.",
+	metadataBase: new URL("https://william.bysaether.com"),
+	title: {
+		default: "William Sæther | Full-Stack Developer",
+		template: "%s | William Sæther",
+	},
+	description: "MSc Computer Science student at NTNU and full-stack developer building web, mobile, machine learning, computer vision, and developer tool projects.",
+	alternates: {
+		canonical: "/",
+	},
+	openGraph: {
+		title: "William Sæther | Full-Stack Developer",
+		description: "Portfolio of William Sæther, an MSc Computer Science student at NTNU with full-stack, machine learning, computer vision, and product-focused project experience.",
+		url: "https://william.bysaether.com",
+		siteName: "William Sæther",
+		images: [
+			{
+				url: "/images/portrait.webp",
+				width: 1000,
+				height: 1234,
+				alt: "William Sæther",
+			},
+		],
+		locale: "en_US",
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "William Sæther | Full-Stack Developer",
+		description: "MSc Computer Science student at NTNU building web, mobile, machine learning, and developer tool projects.",
+		images: ["/images/portrait.webp"],
+	},
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

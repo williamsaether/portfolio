@@ -3,48 +3,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import Image from "next/image";
-
-const timelineEvents = [
-	{
-		id: "hvl",
-		title: "BSc in Computing - HVL",
-		school: "Western Norway University of Applied Sciences",
-		link: "https://www.hvl.no/en/studies-at-hvl/study-programmes/computing/",
-		date: "2022 - 2025",
-		description:
-			"Bachelor's degree in Computer Engineering at HVL. Studied topics including software engineering, networks, " +
-			"and embedded systems. Specialized in machine learning and artificial intelligence.",
-		keywords: ["GPA: 4.59 / 5"],
-		subjects: [
-			"Programming",
-			"Algorithms",
-			"Databases",
-			"Networking",
-			"Software Development",
-			"Machine Learning",
-			"Deep Learning"
-		],
-		image: "/images/hvl.webp",
-		position: 30,
-	},
-	{
-		id: "ntnu",
-		title: "MSc in Computer Science (siv.ing) - NTNU",
-		school: "Norwegian University of Science and Technology",
-		link: "https://www.ntnu.edu/studies/midt",
-		date: "2025 - 2027",
-		description:
-			<>
-				Upcoming masters degree in Computer Science at NTNU. I will qualify
-				as a <a href="https://en.wikipedia.org/wiki/Sivilingeniør" target="_blank" rel="noreferrer" className="underline">
-					sivilingeniør
-				</a>, not to be confused with a civil engineer.</>,
-		keywords: ["Undergoing"],
-		subjects: [],
-		image: "/images/ntnu.webp",
-		position: 70,
-	},
-];
+import { education } from "@/data/education";
 
 export default function Education() {
 	const containerRef = useRef<HTMLDivElement | null>(null);
@@ -59,6 +18,8 @@ export default function Education() {
 		[0, 1],
 		[0, 1]
 	);
+	const secondEventOpacity = useTransform(progressAfterFirstDot, [0.35, 0.45, 0.7], [0, 0.1, 1]);
+	const secondEventSlideX = useTransform(secondEventOpacity, [0, 1], ["10%", "0%"]);
 
 	return (
 		<section ref={containerRef} className="h-[200vh] relative mt-[40vh]">
@@ -67,14 +28,14 @@ export default function Education() {
 					<div className="absolute top-1/2 left-0 -translate-y-1/2 w-full h-2 bg-neutral-700 rounded-full">
 						<motion.div
 							className="absolute top-0 h-2 bg-blue-500 rounded-full origin-left"
-							style={{ width: `${timelineEvents[0].position}%` }}
+							style={{ width: `${education[0].position}%` }}
 						/>
 					</div>
 					<div
 						className="absolute top-1/2 -translate-y-1/2 h-2"
 						style={{
-							left: `${timelineEvents[0].position}%`,
-							width: `${100 - timelineEvents[0].position}%`,
+							left: `${education[0].position}%`,
+							width: `${100 - education[0].position}%`,
 						}}
 					>
 						<motion.div
@@ -85,18 +46,10 @@ export default function Education() {
 						/>
 					</div>
 
-					{timelineEvents.map((event, index) => {
+					{education.map((event, index) => {
 						const dotLeft = `${event.position}%`;
-						const eventThreshold = (event.position - timelineEvents[0].position) / (100 - timelineEvents[0].position);
-						const showEvent = index === 0 ? 1 : useTransform(
-							progressAfterFirstDot,
-							[eventThreshold - 0.15, eventThreshold - 0.05, eventThreshold + 0.04],
-							[0, 0.1, 1]
-						);
-						// @ts-ignore
-						const slideX = index === 0 ? 0 : useTransform(showEvent, [0, 1], ["10%", "0%"]);
-						// @ts-ignore
-						const slideDisplay = index === 0 ? 1 : useTransform(showEvent, [0, 1], ["none", "flex"]);
+						const showEvent = index === 0 ? 1 : secondEventOpacity;
+						const slideX = index === 0 ? 0 : secondEventSlideX;
 
 						return (
 							<div
@@ -113,8 +66,7 @@ export default function Education() {
 								<motion.div
 									className="absolute left-1/2 -translate-x-1/2 w-[40rem] h-[21rem] bg-neutral-800
 										rounded-2xl shadow-xl p-6 flex flex-col justify-between gap-2"
-									// @ts-ignore
-									style={{ bottom: "calc(50% + 100px)", x: slideX, opacity: showEvent, display: slideDisplay }}
+									style={{ bottom: "calc(50% + 100px)", x: slideX, opacity: showEvent }}
 								>
 									<div>
 										<h3 className="text-2xl font-extrabold text-white">{event.title}</h3>

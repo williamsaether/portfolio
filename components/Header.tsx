@@ -2,11 +2,23 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import {usePathname} from "next/navigation";
+import { FileDown } from "lucide-react";
 
 export default function Header() {
 	const pathname = usePathname()
+
+	useEffect(() => {
+		const userAgent = navigator.userAgent;
+		const isSafari = /^((?!chrome|android|crios|fxios|edg).)*safari/i.test(userAgent);
+
+		document.documentElement.classList.toggle("is-safari", isSafari);
+
+		return () => {
+			document.documentElement.classList.remove("is-safari");
+		};
+	}, []);
 
 	return (
 		<div>
@@ -57,10 +69,13 @@ export default function Header() {
 						<span className="text-lg font-bold">william</span>
 					</div>
 				</div>
-				{/*<Link href="/" className="relative z-40">
-					<span className="absolute top-2/3 left-1/2 -translate-1/2 text-xs font-bold">CV</span>
-					<File className="size-8" />
-				</Link>*/}
+				<a
+					href="/William-Saether-CV.pdf"
+					className="hidden lg:inline-flex z-40 items-center gap-2 rounded-full border border-neutral-700 bg-neutral-900 px-4 py-2 text-sm font-semibold transition-colors hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-300"
+				>
+					<FileDown size={16} aria-hidden="true" />
+					Download CV
+				</a>
 			</nav>
 		</div>
 	);

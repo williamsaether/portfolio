@@ -7,6 +7,7 @@ import {
 	Cpu, Film,
 	GitBranch,
 	Layout,
+	Network,
 	Paintbrush,
 	Server,
 	Video
@@ -50,6 +51,8 @@ export default function Skills() {
 				</div>
 				<div className="flex flex-wrap gap-1.5">
 					<TechStack name="Node.js" icon="nodedotjs" />
+					<TechStack name="Supabase" icon="supabase" />
+					<TechStack name="Upstash" icon="upstash" />
 					<TechStack name="Java" icon="java" />
 					<TechStack name="Python" icon="python" />
 				</div>
@@ -74,6 +77,8 @@ export default function Skills() {
 				</div>
 				<div className="flex flex-wrap gap-1.5">
 					<TechStack name="Vercel" icon="vercel" color="white" />
+					<TechStack name="Sentry" icon="sentry" />
+					<TechStack name="RevenueCat" icon="revenuecat" />
 					<TechStack name="Namecheap" icon="namecheap"/>
 					<TechStack name="Mailgun" icon="mailgun"/>
 				</div>
@@ -88,6 +93,7 @@ export default function Skills() {
 				<div className="flex flex-wrap gap-1.5">
 					<OtherStack name="Artificial Intelligence" icon={<Brain size={16} color="#9bf332" />} />
 					<OtherStack name="Machine Learning" icon={<BrainCircuit size={16} color="#3b95ff" />} />
+					<OtherStack name="Sensor Fusion" icon={<Network size={16} color="#7dd3fc" />} />
 				</div>
 			</div>
 			<div className="skills-card">

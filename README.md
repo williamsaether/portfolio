@@ -4,8 +4,8 @@ Personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and MDX
 
 ## Tech Stack
 
-- Next.js 15 (App Router)
-- React 19 + TypeScript
+- Next.js 16 (App Router)
+- React 19.2 + TypeScript
 - Tailwind CSS 4
 - MDX via `@next/mdx`
 - Motion animations (`motion`)
@@ -50,8 +50,9 @@ public/             # Static assets (images, icons)
 
 ## Key Sections
 
-- Hero / intro
-- Projects
+- Hero / intro with CV link
+- Featured and secondary projects
+- Achievements
 - Skills
 - Experience
 - Education (desktop component + mobile MDX)
