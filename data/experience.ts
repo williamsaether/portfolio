@@ -6,11 +6,11 @@ export const experience: ExperienceItem[] = [
 		company: "Sopra Steria",
 		role: "Summer Intern",
 		date: "June 2026 - Present",
-		description: "Working on developer experience and internal tooling for Aker BP. The project focuses on creating a reusable UI component system that helps data and analytics teams build consistent, accessible interfaces through both traditional and AI-assisted development workflows.",
+		description: "Working as a consultant at Sopra Steria on projects for Aker BP. The role involves developing user interfaces across several initiatives, with a focus on creating practical, consistent, and accessible digital experiences.",
 		highlights: [
-			"Contributing to a reusable component system for data-driven applications.",
-			"Improving consistency and universal design across internally developed interfaces.",
-			"Making frontend development more approachable for data and analytics specialists.",
+			"Developing frontend solutions for projects of varying scope.",
+			"Building interfaces with reusable UI components where appropriate.",
+			"Collaborating within a consulting team to meet client needs.",
 		],
 		stack: [
 			{name: "React", icon: "react"},
