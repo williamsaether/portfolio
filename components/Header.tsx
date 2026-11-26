@@ -70,11 +70,11 @@ export default function Header() {
 					</div>
 				</div>
 				<a
-					href="/William-Saether-CV.pdf"
+					href="/cv"
 					className="hidden lg:inline-flex z-40 items-center gap-2 rounded-full border border-neutral-700 bg-neutral-900 px-4 py-2 text-sm font-semibold transition-colors hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-300"
 				>
 					<FileDown size={16} aria-hidden="true" />
-					Download CV
+					View CV
 				</a>
 			</nav>
 		</div>

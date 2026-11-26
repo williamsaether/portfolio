@@ -4,6 +4,10 @@ import createMDX from '@next/mdx'
 const nextConfig = {
 	// Configure `pageExtensions` to include markdown and MDX files
 	pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+	async rewrites() {
+		return [{ source: "/cv", destination: "/William-Saether-CV.pdf" }];
+	},
+
 	turbopack: {
 		root: process.cwd(),
 	},

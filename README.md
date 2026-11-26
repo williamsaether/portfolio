@@ -59,6 +59,8 @@ public/             # Static assets (images, icons)
 
 ## Content Updates
 
+- Project content and ordering: `data/projects.ts`
+- CV: `/cv` serves `public/William-Saether-CV.pdf` (replace the PDF to update it)
 - Main homepage layout: `app/page.tsx`
 - Site metadata: `app/layout.tsx`
 - Education MDX content: `markdown/education.mdx`

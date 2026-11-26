@@ -28,7 +28,7 @@ export function ScrollCard({ card, action, compact = false }: CardProps) {
 
 	const content = (
 		<div
-			className={`w-full h-full flex flex-col justify-between overflow-hidden rounded-2xl ${compact ? "px-6 sm:px-10" : "px-8 sm:px-16"}`}
+			className={`w-full h-full flex flex-col justify-between overflow-clip rounded-2xl ${compact ? "px-6 sm:px-10" : "px-8 sm:px-16"}`}
 			style={{
 				backgroundColor: "white",
 				backgroundImage: "linear-gradient(190deg, " + card.primaryColor + " 20%, " + card.secondaryColor + " 60%, " + card.secondaryColor + "40 100%)"
@@ -43,8 +43,8 @@ export function ScrollCard({ card, action, compact = false }: CardProps) {
 		<motion.div
 			ref={ref}
 			className={`${compact ? "sm:h-[340px] md:h-[410px] lg:h-[370px] xl:h-[410px]" : "sm:h-[450px] md:h-[550px] lg:h-[500px] xl:h-[550px]"} relative rounded-3xl cursor-pointer group p-2 bg-neutral-800 border-1 border-neutral-700`}
-			initial={{ scale: 0.9, opacity: 0 }}
-			animate={animationInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
+			initial={false}
+			animate={{ scale: animationInView ? 1 : 0.98 }}
 			transition={{ duration: 0.4, ease: "easeInOut" }}
 		>
 			<div className="absolute top-0 left-4 right-4 h-[1px] bg-linear-90 from-transparent via-white to-transparent" />
@@ -63,7 +63,7 @@ export function ScrollCard({ card, action, compact = false }: CardProps) {
 function ProjectVisual({ card }: { card: Project }) {
 	if (card.visual.type === "placeholder") {
 		return (
-			<div className="translate-y-5 transition-all duration-300 lg:group-hover:scale-105 lg:group-hover:-rotate-3 scale-105 -rotate-3 lg:scale-100 lg:rotate-0">
+			<div className="w-full shrink-0" style={{ transform: "translateY(20px)" }}>
 				<div
 					className="relative aspect-3/2 rounded-t-2xl border-1 border-white/20 overflow-hidden bg-neutral-950"
 					style={{ boxShadow: "0 0 15px " + card.secondaryColor }}
@@ -91,7 +91,7 @@ function ProjectVisual({ card }: { card: Project }) {
 	}
 
 	return (
-		<div className="translate-y-5 transition-all duration-300 lg:group-hover:scale-105 lg:group-hover:-rotate-3 scale-105 -rotate-3 lg:scale-100 lg:rotate-0">
+		<div className="w-full shrink-0" style={{ transform: "translateY(20px)" }}>
 			<Image
 				src={card.visual.src}
 				alt={card.visual.alt}
@@ -99,7 +99,8 @@ function ProjectVisual({ card }: { card: Project }) {
 				height={600}
 				quality={100}
 				priority
-				className="rounded-t-2xl border-1 border-white/20 aspect-3/2 object-cover"
+				sizes="(min-width: 1280px) 580px, (min-width: 1024px) 45vw, 85vw"
+				className="w-full rounded-t-2xl border-1 border-white/20 aspect-3/2 bg-neutral-950 object-contain object-top"
 				style={{ boxShadow: "0 0 15px " + card.secondaryColor }}
 			/>
 		</div>

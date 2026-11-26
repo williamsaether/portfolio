@@ -56,7 +56,7 @@ export default function Home() {
 								<Image className="size-7" src="/images/icons/github.svg" width={20} height={20} alt="GitHub" priority/>
 							</motion.a>
 						</div>
-						<div className="hidden md:flex gap-4 md:mt-8">
+						<div className="flex flex-wrap gap-4 mt-4 md:mt-8">
 							<div className="small card-wrapper blue rounded-full cursor-pointer group">
 								<div className="card-border"/>
 								<a className="card-content" href="https://contact.bysaether.com" target="_blank" rel="noopener noreferrer">
@@ -72,9 +72,9 @@ export default function Home() {
 							</div>
 							<a
 								className="inline-flex items-center rounded-full border border-white bg-white px-5 py-3 text-sm font-semibold text-black transition-colors hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-300"
-								href="/William-Saether-CV.pdf"
+								href="/cv"
 							>
-								Download CV
+								View CV
 							</a>
 						</div>
 					</div>
