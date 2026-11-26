@@ -53,7 +53,7 @@ export const projects: Project[] = [
 		textColor: "#dcfce7",
 		visual: {
 			type: "image",
-			src: "/images/pictures/oneset.webp",
+			src: "/images/pictures/oneset-cover.webp",
 			alt: "OneSet activity tracking, streak history, and iOS widgets",
 		},
 		name: "OneSet",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
 		textColor: "#f5d0fe",
 		visual: {
 			type: "image",
-			src: "/images/pictures/recigrab.webp",
+			src: "/images/pictures/recigrab-cover.webp",
 			alt: "ReciGrab mobile app preview",
 		},
 		name: "ReciGrab",
@@ -171,7 +171,7 @@ export const projects: Project[] = [
 		textColor: "#ceebfd",
 		visual: {
 			type: "image",
-			src: "/images/pictures/codecore.webp",
+			src: "/images/pictures/codecore-cover.webp",
 			alt: "CodeCore mobile app preview",
 		},
 		name: "CodeCore",

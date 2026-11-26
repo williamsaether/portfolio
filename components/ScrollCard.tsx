@@ -43,8 +43,8 @@ export function ScrollCard({ card, action, compact = false }: CardProps) {
 		<motion.div
 			ref={ref}
 			className={`${compact ? "sm:h-[340px] md:h-[410px] lg:h-[370px] xl:h-[410px]" : "sm:h-[450px] md:h-[550px] lg:h-[500px] xl:h-[550px]"} relative rounded-3xl cursor-pointer group p-2 bg-neutral-800 border-1 border-neutral-700`}
-			initial={false}
-			animate={{ scale: animationInView ? 1 : 0.98 }}
+			initial={{ scale: 0.9, opacity: 0 }}
+			animate={animationInView ? { scale: 1, opacity: 1 } : { scale: 0.9, opacity: 0 }}
 			transition={{ duration: 0.4, ease: "easeInOut" }}
 		>
 			<div className="absolute top-0 left-4 right-4 h-[1px] bg-linear-90 from-transparent via-white to-transparent" />
@@ -63,7 +63,7 @@ export function ScrollCard({ card, action, compact = false }: CardProps) {
 function ProjectVisual({ card }: { card: Project }) {
 	if (card.visual.type === "placeholder") {
 		return (
-			<div className="w-full shrink-0" style={{ transform: "translateY(20px)" }}>
+			<div className="w-full shrink-0 translate-y-10 transition-all duration-300 lg:group-hover:scale-105 lg:group-hover:-rotate-3 scale-105 -rotate-3 lg:scale-100 lg:rotate-0">
 				<div
 					className="relative aspect-3/2 rounded-t-2xl border-1 border-white/20 overflow-hidden bg-neutral-950"
 					style={{ boxShadow: "0 0 15px " + card.secondaryColor }}
@@ -91,7 +91,7 @@ function ProjectVisual({ card }: { card: Project }) {
 	}
 
 	return (
-		<div className="w-full shrink-0" style={{ transform: "translateY(20px)" }}>
+		<div className="w-full shrink-0 translate-y-10 transition-all duration-300 lg:group-hover:scale-105 lg:group-hover:-rotate-3 scale-105 -rotate-3 lg:scale-100 lg:rotate-0">
 			<Image
 				src={card.visual.src}
 				alt={card.visual.alt}

@@ -72,7 +72,7 @@ function ProjectGroup({ title, projects, activeId, setActiveId, active, showDeta
 								{active ? (
 									<motion.div
 										key={active.id}
-										initial={false}
+										initial={{ opacity: 0, y: 10 }}
 										animate={{ opacity: 1, y: 0 }}
 										exit={{ opacity: 0, y: -10 }}
 										transition={{ duration: 0.1}}
@@ -112,7 +112,7 @@ function ProjectGroup({ title, projects, activeId, setActiveId, active, showDeta
 								) : (
 									<motion.div
 										key="placeholder"
-										initial={false}
+										initial={{ opacity: 0 }}
 										animate={{ opacity: 1 }}
 										exit={{ opacity: 0 }}
 									>
